@@ -35,7 +35,7 @@ import math
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_sum_sequence()
-    # run_test_count_items_bigger_than()
+    run_test_count_items_bigger_than()
     # run_test_count_positive_sines()
     # run_test_sum_first_n()
 
@@ -239,7 +239,7 @@ def sum_sequence(sequence):
 def run_test_count_items_bigger_than():
     """ Tests the   count_items_bigger_than   function. """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement this TEST function.
+    # DONE: 4. Implement this TEST function.
     #   It TESTS the  count_items_bigger_than  function defined below.
     #   Include at least ** 2 ** ADDITIONAL tests.
     #
@@ -363,7 +363,25 @@ def run_test_count_items_bigger_than():
     print('  to see whether or not that seems to be true')
     print('  for your code (and Python\'s pseudo-random numbers).')
 
-    # TODO 4 (continued):  Add your 2 ADDITIONAL tests here:
+    # DONE 4 (continued):  Add your 2 ADDITIONAL tests here:
+
+    # Test 8:
+    sequence = [40, 21, 15, 70, -12, 65]
+    threshold = 5
+    expected = 5
+    actual = count_items_bigger_than(sequence, threshold)
+    print()
+    print('Test 8 expected:', expected)
+    print('       actual:  ', actual)
+
+    # Test 9:
+    sequence = [0, 90, 12, -10]
+    threshold = 30
+    expected = 1
+    actual = count_items_bigger_than(sequence, threshold)
+    print()
+    print('Test 9 expected:', expected)
+    print('       actual:  ', actual)
 
 
 def count_items_bigger_than(numbers, threshold):
@@ -400,10 +418,14 @@ def count_items_bigger_than(numbers, threshold):
       :type threshold: float
     """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
-
+    count = 0
+    for k in range (len(numbers)):
+        if numbers[k] > threshold:
+            count = count + 1
+    return count
 
 def run_test_count_positive_sines():
     """ Tests the   count_positive_sines   function. """

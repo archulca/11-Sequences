@@ -14,8 +14,8 @@ import rosegraphics as rg
 def main():
     """ Calls the   TEST   functions in this module. """
     run_test_count_negatives()
-    #run_test_count_short_ones()
-    #run_test_draw_circles()
+    run_test_count_short_ones()
+    run_test_draw_circles()
 
 
 def run_test_count_negatives():
@@ -222,7 +222,7 @@ def run_test_count_short_ones():
     print('Test 9 expected:', expected)
     print('       actual:  ', actual)
 
-def count_short_ones(seq):
+def count_short_ones(seq_of_lists):
     """
     What comes in:  An sequence of sequences.
     What goes out:  Returns the number of sub-sequences in the given
@@ -246,7 +246,13 @@ def count_short_ones(seq):
     # TODO: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-
+    sum = 0
+    count = 0
+    for k in range(len(seq_of_lists)):
+        sum = sum + 1
+        if sum < 3:
+            count = count + 1
+    return count
 def run_test_draw_circles():
     """ Tests the   draw_circles   function. """
     # -------------------------------------------------------------------------
@@ -323,9 +329,15 @@ def draw_circles(window, points, radius, color):
       :type color: str
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
+
+    for k in range (len(points)):
+        circle = rg.Circle(points[k],radius)
+        circle.fill_color = color
+        circle.attach_to(window)
+        window.render()
 
 
 # -----------------------------------------------------------------------------

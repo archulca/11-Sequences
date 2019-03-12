@@ -418,7 +418,7 @@ def print_items_at_odd_indices(sequence):
     # -------------------------------------------------------------------------
     for k in range (len(sequence)):
         if k % 2 == 1:
-            print(sequence[k])
+            print(sequence[k], 'is at index', k)
 
 
 ###############################################################################
@@ -438,7 +438,7 @@ def print_items_in_second_half(sequence):
       100
     """
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #          Tests have been written for you (above).
     #
     # IMPORTANT: Don't get hung up on dealing with the middle item
@@ -449,11 +449,11 @@ def print_items_in_second_half(sequence):
     #   Use   //   for integer division.
     # -------------------------------------------------------------------------
     for k in range (len(sequence)):
-        if k >= len(sequence)/2:
-            if len(sequence) % 2 == 1:
-                print(sequence[k-1])
-
-            if len(sequence) % 2 == 0:
+        if len(sequence)% 2 == 1:
+            if k >= (len(sequence)/2 - 1):
+                print(sequence[k])
+        if len(sequence) % 2 == 0:
+            if k >= len(sequence)/2:
                 print(sequence[k])
 
 

@@ -243,14 +243,13 @@ def count_short_ones(seq_of_lists):
       :type seq_of_lists: (list | tuple) of (list | tuple | str)
     """
     # ------------------------------------------------------------------
-    # TODO: 5. Implement and test this function.
+    # DONE: 5. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # ------------------------------------------------------------------
-    sum = 0
+
     count = 0
     for k in range(len(seq_of_lists)):
-        sum = sum + 1
-        if sum < 3:
+        if len(seq_of_lists[k]) < 3:
             count = count + 1
     return count
 def run_test_draw_circles():
